@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+Friends Page
+</body>
+</html>
+<script>
+
+
+function runFriendQuery() {
+
+var currentURL = window.location.origin;
+
+
+$.ajax({ url: currentURL + "/api/friends", method: "GET" })
+  .then(function(friendData) {
+    console.log("------------------------------------");
+    console.log("URL: " + currentURL + "/api/friends");
+    console.log("------------------------------------");
+    console.log(friendData);
+    console.log("------------------------------------");
+  });
+}
+runFriendQuery();
+
+</script>
